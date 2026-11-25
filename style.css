@@ -552,3 +552,7 @@ a { color: inherit; text-decoration: none; }
     .work__col { display: contents; }
     .card--now { order: -1; }
 }
+
+/* "via Solvo Global" badge on the Eivillas card */
+.card__logo--via { gap: 7px; height: 30px; padding: 7px 11px 7px 10px; }
+.card__logo--via small { font-size: 10px; font-weight: 500; letter-spacing: .04em; text-transform: uppercase; color: rgba(255,255,255,.6); }
