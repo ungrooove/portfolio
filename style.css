@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /* Type: SF via the system on Apple devices, Inter elsewhere (no bundled Apple font files) */
 :root {
     --bg: #111111;
