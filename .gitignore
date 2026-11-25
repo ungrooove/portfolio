@@ -1,0 +1,11 @@
+# Fuentes de Apple (SF Pro): licencia que no permite publicarlas
+fonts/
+
+# Copias de seguridad y archivos de trabajo
+_backup-v1/
+Claude outputs/
+
+# Sistema
+.DS_Store
+Thumbs.db
+desktop.ini

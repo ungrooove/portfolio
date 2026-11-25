@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="theme-color" content="#111111">
+    <title>Infocenter — QR Medication App – Jano Aguiar</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;500&family=Inter:wght@300..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+    <div class="cs" style="--cs-accent:#5aa9ff">
+        <nav class="cs-nav">
+            <a class="body" href="../index.html">Jano Aguiar</a>
+            <ul>
+                <li><a href="../index.html#work">Work</a></li>
+                <li><a href="https://drive.google.com/file/d/1LfXrcL9RKeD29D6Ub3OGLw8qLSYocdIQ/view?usp=sharing" target="_blank" rel="noreferrer">CV ↗</a></li>
+            </ul>
+        </nav>
+        <div class="cs-sticky" aria-hidden="true">
+            <a href="../index.html">Jano Aguiar</a>
+            <span class="cs-sticky__title">Infocenter — QR Medication App</span>
+            <ul><li><a href="../index.html#work">Work</a></li><li><a href="https://drive.google.com/file/d/1LfXrcL9RKeD29D6Ub3OGLw8qLSYocdIQ/view?usp=sharing" target="_blank" rel="noreferrer">CV ↗</a></li></ul>
+        </div>
+
+        <header class="cs-splash" style="--cs-splash:#0b3a8c">
+            <img src="../media/logos/infocenter-white.png" alt="Infocenter logo">
+        </header>
+
+        <div class="cs-content">
+        <div class="cs-wrap">
+            <div class="cs-summary">
+                <h1 class="cs-title">Infocenter — QR Medication App</h1>
+            <p class="cs-lead"><strong>Digital medication control with QR codes.</strong> Infocenter is a leading SAP company in Paraguay, with more than 45 years of experience and 180+ consultants driving digital transformation in public and private organisations.</p>
+            <p class="cs-lead">They needed to improve how medical staff record the medications they use. I built a cross-platform app where doctors scan each medication’s QR code, record quantities and generate reports automatically — replacing manual registration for IPS.</p>
+            </div>
+            <aside class="cs-info">
+                <dl><div><dt>Client</dt><dd>Infocenter<br>SAP Gold Partner, Paraguay</dd></div><div><dt>Type</dt><dd>Healthcare — mobile web app (PWA)</dd></div><div><dt>Deliverables</dt><dd>QR scanning, quantity records, Excel export, email + PIN login</dd></div></dl>
+                <dl><div><dt>Stack</dt><dd>HTML &amp; CSS, JavaScript + APIs, PHP + Brevo, Service Worker + Manifest</dd></div><div><dt>Link</dt><dd>Private / internal</dd></div></dl>
+            </aside>
+        </div>
+
+        <section class="cs-body reveal">
+            <div class="cs-stats"><div><b>30%+</b><span>less time on manual records</span></div><div><b>QR</b><span>scan to register</span></div><div><b>PIN</b><span>email login</span></div></div>
+        </section>
+        <section class="cs-body reveal">
+            <h2>How it works</h2>
+            <ul><li><strong>Sign in</strong> — staff enter their email and receive a PIN to log in (emails sent through Brevo).</li><li><strong>Scan</strong> — the camera reads the medication’s QR and shows material number, name, expiry date, internal and supplier batch, unit and warehouse.</li><li><strong>Record</strong> — set the quantity and keep scanning; each entry can be reviewed or deleted.</li><li><strong>Export</strong> — “Finish and download Excel” generates a file with date, time, quantity and product name for every record.</li></ul>
+            <p>Built as a Service Worker + Manifest web app, it installs on any phone without going through an app store.</p>
+        </section>
+        <figure class="cs-figure plain narrow reveal"><img src="../media/infocenter-app.png" alt="Login with email + PIN, and the scan / record screen" loading="lazy"></figure>
+        <div class="cs-caption"><p>Login with email + PIN, and the scan / record screen</p></div>
+        <section class="cs-body reveal">
+            <h2>Challenges</h2>
+            <ul><li><strong>Defining requirements</strong> — constant adjustments to match how medical staff really work.</li><li><strong>QR scanning</strong> — reading tuned for different codes and packaging so every record is accurate.</li><li><strong>Secure users</strong> — balancing security and simplicity in the email + PIN flow.</li><li><strong>Dynamic reports</strong> — the Excel export needed a flexible, reliable data structure.</li></ul>
+        </section>
+        <section class="cs-body reveal">
+            <h2>Results</h2>
+            <p>Fewer manual errors and faster stock management in the health centres, confidential and traceable records thanks to PIN access, faster audits through automatic Excel exports, and an app that fit into the staff’s existing workflow. Time spent on manual medication records dropped by <strong>more than 30%</strong>.</p>
+        </section>
+
+        <div class="cs-next">
+            <span class="caption" style="color:#71717a">Next project</span>
+            <a href="musimundo.html">Musimundo →</a>
+        </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <section class="footer__inner grid">
+            <div class="footer__meta caption">
+                <div class="version">
+                    <span class="version__pill">v2.1.0</span>
+                    <span class="version__date">Last updated 25-11-2026</span>
+                </div>
+            </div>
+            <div class="footer__links">
+                <p><a class="link" href="https://drive.google.com/file/d/1LfXrcL9RKeD29D6Ub3OGLw8qLSYocdIQ/view?usp=sharing" target="_blank" rel="noreferrer">Resume</a><sup class="arrow">↗</sup></p>
+                <p><a class="link" href="../index.html#work">Work</a></p>
+            </div>
+            <div class="footer__cta">
+                <p>Let’s work together.</p>
+                <p><a class="link" href="mailto:janoaguiar97@gmail.com">janoaguiar97@gmail.com</a><sup class="arrow">↗</sup></p>
+            </div>
+        </section>
+    </footer>
+
+    <div class="lightbox" aria-hidden="true"><img alt=""></div>
+    <script src="../script.js"></script>
+</body>
+
+</html>

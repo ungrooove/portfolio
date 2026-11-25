@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="description" content="Jano Aguiar — Front-End Developer. Websites, eCommerce and custom WordPress platforms.">
+    <meta name="theme-color" content="#111111">
+    <title>Jano Aguiar – Front-End Developer</title>
+    <link rel="icon" type="image/x-icon" href="media/logos/JA_favicon_transparent.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;500&family=Inter:wght@300..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script>document.documentElement.classList.add("ja-intro");setTimeout(function(){document.documentElement.classList.remove("ja-intro")},3000)</script>
+</head>
+
+<body>
+    <div class="page">
+
+        <!-- NAV -->
+        <nav class="nav grid">
+            <a class="nav__name" href="index.html"><h1 class="body">Jano Aguiar</h1></a>
+            <div class="nav__links body">
+                <span><a class="link" href="https://drive.google.com/file/d/1LfXrcL9RKeD29D6Ub3OGLw8qLSYocdIQ/view?usp=sharing" target="_blank" rel="noreferrer">CV</a><sup class="arrow">↗</sup></span>
+            </div>
+        </nav>
+
+        <main>
+            <!-- HERO -->
+            <div class="hero-zone">
+                <div class="hero-glow" aria-hidden="true"><span></span><span></span><span></span></div>
+            <section class="hero grid">
+                <div class="hero__lockup">
+                    <h2 class="hero__name">Jano Aguiar</h2>
+                    <p class="hero__sub"><span>Dev Frontend &amp; Wordpress + PHP</span></p>
+                </div>
+                <div class="cd" aria-label="Code and design: drag to compare" style="--x:34%">
+                    <div class="cd__labels"><span>Code</span><span>Design</span></div>
+                    <div class="cd__win">
+                    <div class="cd__bar"><i></i><i></i><i></i><span>widget.html</span></div>
+                    <div class="cd__stage">
+                        <pre class="cd__code"><code><b class="t">&lt;!-- Smart Stack: clock → weather → photo --&gt;</b>
+<b class="t">&lt;div</b> <b class="p">class</b>=<b class="s">"stack"</b><b class="t">&gt;</b>
+  <b class="t">&lt;div</b> <b class="p">class</b>=<b class="s">"widget clock"</b><b class="t">&gt;</b>…<b class="t">&lt;/div&gt;</b>
+  <b class="t">&lt;div</b> <b class="p">class</b>=<b class="s">"widget weather"</b><b class="t">&gt;</b>…<b class="t">&lt;/div&gt;</b>
+  <b class="t">&lt;div</b> <b class="p">class</b>=<b class="s">"widget photo"</b><b class="t">&gt;</b><b class="t">&lt;img</b> <b class="p">src</b>=<b class="s">"foto.jpg"</b><b class="t">&gt;</b><b class="t">&lt;/div&gt;</b>
+<b class="t">&lt;/div&gt;</b>
+
+<b class="a">.stack</b> { <b class="p">width</b>: <b class="n">236px</b>; <b class="p">height</b>: <b class="n">170px</b>; <b class="p">border-radius</b>: <b class="n">28px</b>; }
+<b class="a">.widget</b> {
+  <b class="p">position</b>: absolute; <b class="p">inset</b>: <b class="n">0</b>;
+  <b class="p">transform</b>: <b class="s">translateY(100%)</b>;
+  <b class="p">transition</b>: transform <b class="n">.8s</b> <b class="s">cubic-bezier(.65,0,.25,1)</b>;
+}
+<b class="a">.widget.active</b> { <b class="p">transform</b>: none; }
+<b class="a">.clock</b> {
+  <b class="p">background</b>: <b class="s">rgba(255,255,255,.55)</b>;
+  <b class="p">backdrop-filter</b>: <b class="s">blur(30px) saturate(180%)</b>;
+}
+<b class="a">.weather</b> { <b class="p">background</b>: <b class="s">linear-gradient(var(--sky-a), var(--sky-b))</b>; }
+
+<b class="t">// clock</b>
+<b class="k">const</b> tz = <b class="s">'America/Argentina/Buenos_Aires'</b>;
+<b class="k">const</b> now = <b class="k">new</b> <b class="p">Date</b>().<b class="p">toLocaleString</b>(<b class="s">'en-US'</b>, { <b class="p">timeZone</b>: tz });
+<b class="k">gsap</b>.<b class="p">to</b>(hand, { <b class="p">rotation</b>: sec * <b class="n">6</b>, <b class="p">ease</b>: <b class="s">'elastic.out'</b> });
+
+<b class="t">// weather · Open-Meteo</b>
+<b class="k">const</b> res = <b class="k">await</b> <b class="p">fetch</b>(<b class="s">`${API}?latitude=-34.60&amp;longitude=-58.38`</b>);
+<b class="k">const</b> { current, daily } = <b class="k">await</b> res.<b class="p">json</b>();
+temp.<b class="p">textContent</b> = <b class="s">`${Math.round(current.temperature_2m)}°`</b>;
+widget.style.<b class="p">setProperty</b>(<b class="s">'--sky-a'</b>, sky[phase][<b class="n">0</b>]);
+
+<b class="t">// background · WebGL mesh gradient</b>
+<b class="k">float</b> w = <b class="p">exp</b>(-<b class="p">dot</b>(uv - p, uv - p) * <b class="n">9.0</b>);
+color = <b class="p">mix</b>(color, sky, w);
+
+<b class="t">// rotate the stack every 5s</b>
+<b class="p">setInterval</b>(next, <b class="n">5000</b>);</code></pre>
+                        <div class="cd__design">
+                            <canvas class="cd__gl" aria-hidden="true"></canvas>
+                            <span class="cd__orb"></span><span class="cd__orb cd__orb--2"></span>
+                            <div class="cd__stack" aria-live="off">
+                                <div class="cd__stack-clip">
+                                <div class="cd__w cd__widget is-active" data-name="Clock">
+                                    <div class="cd__wtop">
+                                        <svg class="cd__dial" viewBox="0 0 100 100" aria-hidden="true">
+                                            <circle cx="50" cy="50" r="48"/>
+                                            <g class="cd__ticks"><line x1="50" y1="7" x2="50" y2="12" transform="rotate(30 50 50)"/><line x1="50" y1="7" x2="50" y2="12" transform="rotate(60 50 50)"/><line x1="50" y1="7" x2="50" y2="12" transform="rotate(120 50 50)"/><line x1="50" y1="7" x2="50" y2="12" transform="rotate(150 50 50)"/><line x1="50" y1="7" x2="50" y2="12" transform="rotate(210 50 50)"/><line x1="50" y1="7" x2="50" y2="12" transform="rotate(240 50 50)"/><line x1="50" y1="7" x2="50" y2="12" transform="rotate(300 50 50)"/><line x1="50" y1="7" x2="50" y2="12" transform="rotate(330 50 50)"/></g>
+                                            <g class="cd__nums"><text x="50.0" y="25.3">12</text><text x="80.0" y="55.3">3</text><text x="50.0" y="85.3">6</text><text x="20.0" y="55.3">9</text></g>
+                                            <line class="cd__h" data-h x1="50" y1="52" x2="50" y2="28"/>
+                                            <line class="cd__m" data-m x1="50" y1="54" x2="50" y2="14"/>
+                                            <line class="cd__s" data-s x1="50" y1="60" x2="50" y2="10"/>
+                                            <circle class="cd__pin" cx="50" cy="50" r="2.6"/>
+                                        </svg>
+                                        <div class="cd__wmeta"><strong>Buenos Aires</strong><span data-day>Today</span></div>
+                                    </div>
+                                    <div class="cd__wbottom"><span class="cd__clock" data-clock>--:--</span><span class="cd__tz">UTC−3</span></div>
+                                </div>
+                                <div class="cd__w cd__weather" data-name="Weather" data-weather hidden>
+                                    <div class="cd__wx-top"><span class="cd__wx-city">Buenos Aires</span><span class="cd__wx-temp" data-wx-temp>--°</span></div>
+                                    <div class="cd__wx-bottom"><span class="cd__wx-icon" data-wx-icon></span><span class="cd__wx-cond" data-wx-cond></span><span class="cd__wx-hl" data-wx-hl></span></div>
+                                </div>
+                                <div class="cd__w cd__photo" data-name="Photos">
+                                    <img src="media/widgets/foto.jpg" alt="Grey and white cat lying in the sun on the grass" width="472" height="336" loading="lazy" decoding="async">
+                                </div>
+                                </div>
+                                <div class="cd__dots" aria-hidden="true"></div>
+                            </div>
+                        </div>
+                        <div class="cd__handle"><span></span></div>
+                    </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ABOUT / STACK / LINKS -->
+            <section class="intro grid">
+                <div class="intro__about reveal">
+                    <p class="caption caption--label">About</p>
+                    <p class="body">Jano creates websites. He enjoys moving between clarity and complexity, finding balance in the dialogue between design and code. What began as curiosity became a practice—building digital spaces that feel simple, useful, and alive.</p>
+                    <p class="body">If you’re working on something meaningful, he’d love to <a class="link" href="mailto:janoaguiar97@gmail.com">connect</a><sup class="arrow">↗</sup>.</p>
+                </div>
+
+                <div class="intro__stack reveal">
+                    <p class="caption caption--label">Stack</p>
+                    <ul class="body">
+                        <li>HTML<sup class="num">1</sup></li>
+                        <li>CSS / Sass<sup class="num">2</sup></li>
+                        <li>JavaScript<sup class="num">3</sup></li>
+                        <li>PHP<sup class="num">4</sup></li>
+                        <li>WordPress<sup class="num">5</sup></li>
+                    </ul>
+                </div>
+
+                <div class="intro__links reveal">
+                    <p class="caption caption--label">Links</p>
+                    <ul class="body">
+                        <li><a class="link" href="https://drive.google.com/file/d/1LfXrcL9RKeD29D6Ub3OGLw8qLSYocdIQ/view?usp=sharing" target="_blank" rel="noreferrer">Resume</a><sup class="arrow">↗</sup></li>
+                        <li><a class="link" href="mailto:janoaguiar97@gmail.com">Email</a><sup class="arrow">↗</sup></li>
+                    </ul>
+                </div>
+            </section>
+            </div>
+
+            <!-- WORK -->
+            <section class="work" id="work">
+                <div class="work__head">
+                    <p class="caption caption--label" style="margin:0">Selected work</p>
+                    <p class="caption work__count">06 projects</p>
+                </div>
+
+                <div class="work__grid">
+                    <!-- column 1 -->
+                    <div class="work__col">
+                        <a class="card" href="pages/gallego.html">
+                            <div class="card__media ratio-16x10">
+                                <div class="card__brand" style="background:#ececec"><img src="media/logos/gallego.png" alt="El Gallego Todo Motor"></div>
+                                <span class="card__badge">13k retail · 50k wholesale</span>
+                            </div>
+                            <div class="card__meta">
+                                <div>
+                                    <h3 class="card__title">El Gallego Todo Motor</h3>
+                                    <p class="caption card__cap">eCommerce · WooCommerce</p>
+                                </div>
+                                <span class="card__go">↗</span>
+                            </div>
+                        </a>
+
+                        <a class="card" href="pages/modda.html">
+                            <div class="card__media ratio-4x3">
+                                <div class="card__brand" style="background:#071114"><img src="media/logos/modda.svg" alt="Modda Tech"></div>
+                                                                <span class="card__badge">Websites · eCommerce · Integrations</span>
+                            </div>
+                            <div class="card__meta">
+                                <div>
+                                    <h3 class="card__title">Modda Tech</h3>
+                                    <p class="caption card__cap card__cap--now">Current job · Front-End &amp; PHP Developer</p>
+                                </div>
+                                <span class="card__go">↗</span>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- column 2 -->
+                    <div class="work__col">
+                        <a class="card" href="pages/franco.html">
+                            <div class="card__media ratio-4x5">
+                                <video data-autoplay muted loop playsinline preload="none" poster="media/franco-card-poster.jpg"><source src="https://francoba.com/wp-content/uploads/2025/04/Video-sin-titulo-%E2%80%90-Hecho-con-Clipchamp.mp4"><source src="media/video/franco-3d.mp4"><source src="media/franco-card.mp4"></video>
+                                <span class="card__logo"><img src="media/logos/franco-white.png" alt="Franco BA"></span>
+                                <span class="card__badge">+16% event visits</span>
+                            </div>
+                            <div class="card__meta">
+                                <div>
+                                    <h3 class="card__title">Franco BA</h3>
+                                    <p class="caption card__cap">Artist site · Auto-synced dates</p>
+                                </div>
+                                <span class="card__go">↗</span>
+                            </div>
+                        </a>
+
+                        <a class="card" href="pages/infocenter.html">
+                            <div class="card__media ratio-1x1">
+                                <div class="card__brand" style="background:#0b3a8c"><img src="media/logos/infocenter-white.png" alt="Infocenter"></div>
+                                <span class="card__badge">−30% time on manual records</span>
+                            </div>
+                            <div class="card__meta">
+                                <div>
+                                    <h3 class="card__title">Infocenter — QR App</h3>
+                                    <p class="caption card__cap">Healthcare · PWA</p>
+                                </div>
+                                <span class="card__go">↗</span>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- column 3 -->
+                    <div class="work__col">
+                        <a class="card" href="pages/red.html">
+                            <div class="card__media ratio-1x1">
+                                <div class="card__brand" style="background:#0f2a22"><img class="tall" src="media/logos/red-white.png" alt="RE&amp;D Legal Group"></div>
+                                <span class="card__badge">Custom property platform</span>
+                            </div>
+                            <div class="card__meta">
+                                <div>
+                                    <h3 class="card__title">RE&amp;D Legal Group</h3>
+                                    <p class="caption card__cap">Legal · Real estate</p>
+                                </div>
+                                <span class="card__go">↗</span>
+                            </div>
+                        </a>
+
+                        <a class="card" href="pages/musimundo.html">
+                            <div class="card__media ratio-4x3">
+                                <div class="card__brand" style="background:#161616"><img src="media/logos/musimundo.svg" alt="Musimundo"></div>
+                            </div>
+                            <div class="card__meta">
+                                <div>
+                                    <h3 class="card__title">Musimundo</h3>
+                                    <p class="caption card__cap">Retail · SAP hardware</p>
+                                </div>
+                                <span class="card__go">↗</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <section class="footer__inner grid">
+            <div class="footer__meta caption">
+                <div class="version">
+                    <span class="version__pill">v2.2.0</span>
+                    <span class="version__date">Last updated 25-11-2026</span>
+                </div>
+            </div>
+            <div class="footer__links">
+                <p><a class="link" href="https://drive.google.com/file/d/1LfXrcL9RKeD29D6Ub3OGLw8qLSYocdIQ/view?usp=sharing" target="_blank" rel="noreferrer">Resume</a><sup class="arrow">↗</sup></p>
+                <p><a class="link" href="#work">Work</a></p>
+            </div>
+            <div class="footer__cta">
+                <p>Let’s work together.</p>
+                <p><a class="link" href="mailto:janoaguiar97@gmail.com">janoaguiar97@gmail.com</a><sup class="arrow">↗</sup></p>
+            </div>
+        </section>
+    </footer>
+
+    <script src="vendor/gsap/gsap.min.js"></script>
+    <script src="vendor/gsap/SplitText.min.js"></script>
+    <script src="vendor/gsap/Draggable.min.js"></script>
+    <script src="vendor/gsap/InertiaPlugin.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
